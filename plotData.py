@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import configuration as config
+import configuration as cfg
 import sys
 import os
 import cv2
 
 
-def plot_range_and_power(reshapedFrame, config, frame_number, createPlotResultVideo):
+def plot_doppler_range_power(reshapedFrame, config, frame_number, createPlotResultVideo):
     """
     Plot the range-Doppler map, range FFT, and relative power vs. range for a given frame.
     
@@ -17,8 +17,8 @@ def plot_range_and_power(reshapedFrame, config, frame_number, createPlotResultVi
         createPlotResultVideo (int): Flag indicating whether to save plot images for video creation (1) or display the plot (0).
     """
     # Define the range resolution and Doppler resolution in meters
-    range_resolution = config.RANGE_RESOLUTION
-    doppler_resolution = config.DOPPLER_RESOLUTION
+    range_resolution = cfg.RANGE_RESOLUTION
+    doppler_resolution = cfg.DOPPLER_RESOLUTION
     
     # Define the maximum and minimum range in meters to display
     max_range_meters = 3
@@ -29,7 +29,7 @@ def plot_range_and_power(reshapedFrame, config, frame_number, createPlotResultVi
     min_range_bins = int(min_range_meters / range_resolution)
 
     # Perform range FFT on the reshaped frame
-    rangeFFTResult = rangeFFT(reshapedFrame, config)
+    rangeFFTResult = rangeFFT(reshapedFrame, cfg)
     
     # Apply clutter removal along the third axis (numLoopsPerFrame)
     rangeFFTResult = clutter_removal(rangeFFTResult, axis=2)
@@ -110,11 +110,11 @@ class FrameConfig:
     """
     def __init__(self):
         # Get configuration values from the configuration file (config)
-        self.numTxAntennas = config.NUM_TX
-        self.numRxAntennas = config.NUM_RX
-        self.numLoopsPerFrame = config.LOOPS_PER_FRAME
-        self.numADCSamples = config.ADC_SAMPLES
-        self.numAngleBins = config.NUM_ANGLE_BINS
+        self.numTxAntennas = cfg.NUM_TX
+        self.numRxAntennas = cfg.NUM_RX
+        self.numLoopsPerFrame = cfg.LOOPS_PER_FRAME
+        self.numADCSamples = cfg.ADC_SAMPLES
+        self.numAngleBins = cfg.NUM_ANGLE_BINS
 
         # Calculate the number of chirps per frame
         self.numChirpsPerFrame = self.numTxAntennas * self.numLoopsPerFrame
@@ -303,10 +303,11 @@ def create_video(image_folder, output_path, fps=5):
 def main():
 
     # Print the range resolution, Doppler resolution, maximum range, and maximum Doppler from the configuration
-    print(config.RANGE_RESOLUTION, config.DOPPLER_RESOLUTION, config.MAX_RANGE, config.MAX_DOPPLER)
+    print(cfg.RANGE_RESOLUTION, cfg.DOPPLER_RESOLUTION, cfg.MAX_RANGE, cfg.MAX_DOPPLER)
 
     # Initialize the flag for creating a plot result video
     createPlotResultVideo = 0
+    NumOfFrames = 100
     
     # Get the binary file name from the command-line arguments
     bin_filename = sys.argv[1]
@@ -326,7 +327,7 @@ def main():
     config = FrameConfig()
 
     # Process a specified number of frames (adjust the range as needed)
-    for frame in range(0, 100):
+    for frame in range(0, NumOfFrames):
         # Read the next frame from the binary file
         bin_frame = bin_reader.getNextFrame(config)
         
@@ -337,7 +338,7 @@ def main():
         reshapedFrame = frameReshape(np_frame, config)
         
         # Plot the range-Doppler map, range FFT, and relative power vs. range for the current frame
-        plot_range_and_power(reshapedFrame, config, frame, createPlotResultVideo)
+        plot_doppler_range_power(reshapedFrame, config, frame, createPlotResultVideo)
 
     # Create a video from the plot images if specified
     if createPlotResultVideo != 0:
