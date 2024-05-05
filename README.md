@@ -24,16 +24,42 @@ Step 2: Once the script is done running, we are ready to capture data using the 
 
 ## Recording Data
 
+Run the script with the desired duration of data capture in minutes as a command-line argument.
+This will create a .bin file in the same directory which can be later used for plotting and analysis.
+For example:
+
+```bash
+python data_capture.py 5
+```
+
 
 ----------------------------------------------------------------------------
 
-# Plotting the Data
+## Plotting the Data
+
+Using the created .bin file, to view the data frame by frame, with going to the next frame using the key 'q', use the following usage<br/>
+We set the 3rd argument as 0 indicating we do not need to capture a video of the results.
+
+```bash
+python plotData.py <filename.bin> 0 
+``` 
+The results should be as follows:<br\>
+![Figure_1](https://github.com/pvdsan/mmWaveRadar_Experiments/assets/22724124/7ed59df4-a755-4ef3-a20a-03615cd20594)
+
+Please adjust the vmin and vmax values of imshow() as per your data to focus on specific signatures you need in the plotting part of the plot_doppler_range_power() function.<br/>
+Also you can set the number of frames to be viewed by changing the NumOfFrames variable in the main()
 
 ----------------------------------------------------------------------------
 
-# Running the Plot Results as a video
+## Running the Plot Results as a video
 
+For showing and presenting the results its inefficient to go frame by frame especially when you can have thousands of frames. It's better to create a video of the plots especially to observe the doppler.<br/>
+By setting the 3rd argument as 1 , we save images of the plots frame by frame, by creating a output_images directory.<br/>
+These images are then stiched as a video using the OpenCv VideroWriter and available as an '.mp4' file in the same directory as 'Plot_Results.mp4'. <br/>
 
+```bash
+python plotData.py <filename.bin> 1 
+```
 
 
 
