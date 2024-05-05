@@ -6,7 +6,7 @@ Special Thanks to Argha Sen, IIT Kharagpur, for allowing us to refer https://git
 
 ----------------------------------------------------------------------------
 ## Hardware Setup
-Step 1: Make sure the IWR6843ISK (mmWave board) is connected with the mmWAVEICBOOST and DCM1000EVM along with the swicthes as follows
+Step 1: Make sure the IWR6843ISK (mmWave board) is connected with the mmWAVEICBOOST and DCM1000EVM along with the swicthes as follows<br/>
 ![image](https://github.com/pvdsan/mmWaveRadar_Experiments/assets/22724124/acc04876-b1de-4abf-a143-d167ecd64a09)
 
 
