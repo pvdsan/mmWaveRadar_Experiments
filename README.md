@@ -29,7 +29,7 @@ Run the script with the desired duration of data capture in minutes as a command
 ```bash
 python data_capture.py 5
 ```
-
+This will create a .bin file in the same directory which can be later used for plotting and analysis.
 ----------------------------------------------------------------------------
 
 # Plotting the Data
