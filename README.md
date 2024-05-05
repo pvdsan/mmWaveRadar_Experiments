@@ -22,7 +22,8 @@ Step 2: Once the script is done running, we are ready to capture data using the 
 
 -----------------------------------------------------------------------------
 
-# Recording Data
+## Recording Data
+
 
 ----------------------------------------------------------------------------
 
