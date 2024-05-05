@@ -24,6 +24,10 @@ Step 2: Once the script is done running, we are ready to capture data using the 
 
 ## Recording Data
 
+Run the script with the desired duration of data capture in minutes as a command-line argument. For example:
+
+```bash
+python data_capture.py 5
 
 ----------------------------------------------------------------------------
 
