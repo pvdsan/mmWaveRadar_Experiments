@@ -24,7 +24,7 @@ if __name__=='__main__':
         elif itemNum==-1:
             print(readItem)
         elif itemNum==-2:       
-            time.sleep(1)
+            time.sleep(0.04)
         if time_min>=duration:    
            a.whileSign = False 
            f.close()
