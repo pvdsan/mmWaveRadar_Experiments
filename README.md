@@ -1,4 +1,3 @@
-
 # Introduction
 This is a research project under MORSE Studio Georgia State University under Dr. Ashwin Ashok<br/>
 The project aims to understand feasibility of using mmWave Radar setup to detect tiny drone imitating a fly/mosquito with the help of range, doppler and sound signatures of the object of interest<br/>
@@ -16,8 +15,10 @@ See document: https://www.ti.com/lit/pdf/spruij4 under FPGA - SPI Flash Programm
 --------------------------------------------------------------------------------------------------------
 
 ## mmWave Studio Configuration Setup
-Run the dataCaptureScript.lua from the repository in the mmWave Studio
+Step 1: Run the dataCaptureScript.lua from the repository in the mmWave Studio
+![image](https://github.com/pvdsan/mmWaveRadar_Experiments/assets/22724124/674d52f2-fef8-4baa-93cd-53734ee2757c)
 
+Step 2: Once the script is done running, we are ready to capture data using the datacapture.py script.
 
 -----------------------------------------------------------------------------
 
