@@ -35,7 +35,17 @@ python data_capture.py 5
 
 ----------------------------------------------------------------------------
 
-# Plotting the Data
+## Plotting the Data
+
+Using the above created .bin file, to view the data frame by frame with going to the next frame using a keystroke, use the following usage<br\>
+We set the 3rd argument as 0 indicating we do not need to capture a video of the results.
+
+```bash
+python plotData.py <filename.bin> 0 
+``` 
+The results should be as follows:<br\>
+![Figure_1](https://github.com/pvdsan/mmWaveRadar_Experiments/assets/22724124/7ed59df4-a755-4ef3-a20a-03615cd20594)
+
 
 ----------------------------------------------------------------------------
 
