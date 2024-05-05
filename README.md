@@ -28,6 +28,7 @@ Run the script with the desired duration of data capture in minutes as a command
 
 ```bash
 python data_capture.py 5
+```
 
 ----------------------------------------------------------------------------
 
