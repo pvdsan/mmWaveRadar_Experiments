@@ -46,7 +46,7 @@ python plotData.py <filename.bin> 0
 The results should be as follows:<br\>
 ![Figure_1](https://github.com/pvdsan/mmWaveRadar_Experiments/assets/22724124/7ed59df4-a755-4ef3-a20a-03615cd20594)
 
-Please adjust the vmin and vmax values of imshow() as per your data to focus on specific signatures you need in the in the plotting part of the plot_doppler_range_power() function
+Please adjust the vmin and vmax values of imshow() as per your data to focus on specific signatures you need in the plotting part of the plot_doppler_range_power() function.<br/>
 Also you can set the number of frames to be viewed by changing the NumOfFrames variable in the main()
 
 ----------------------------------------------------------------------------
