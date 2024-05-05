@@ -48,19 +48,18 @@ The results should be as follows:<br\>
 
 Please adjust the vmin and vmax values of imshow() as per your data to focus on specific signatures you need in the in the plotting part of the plot_doppler_range_power() function
 Also you can set the number of frames to be viewed by changing the NumOfFrames variable in the main()
+
 ----------------------------------------------------------------------------
 
 ## Running the Plot Results as a video
 
-For showing and presenting the results its inefficient to go frame by frame especially when you can have thousands of frames. Its better to create a video of the plots especially to observe the doppler.<br/>
-By setting the 3rd argument as 1 , we save images of the plots frame by frame, by creating a output_images directory. These images are then stiched as a video using the OpenCv VideroWriter and available as an .mp4 file in the same directory as 'Plot_Results.mp4'
+For showing and presenting the results its inefficient to go frame by frame especially when you can have thousands of frames. It's better to create a video of the plots especially to observe the doppler.<br/>
+By setting the 3rd argument as 1 , we save images of the plots frame by frame, by creating a output_images directory.<br/>
+These images are then stiched as a video using the OpenCv VideroWriter and available as an '.mp4' file in the same directory as 'Plot_Results.mp4'. <br/>
 
 ```bash
 python plotData.py <filename.bin> 1 
 ```
-
-
-
 
 
 
